@@ -28,6 +28,8 @@ services:
   fileserver:
     image: hapi-fileserver
     restart: always
+    ports:
+      - "8000:80"
 
 volumes:
   hapi-fhir-postgres:
