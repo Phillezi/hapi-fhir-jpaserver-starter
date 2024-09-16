@@ -26,10 +26,12 @@ services:
       - hapi-fhir-postgres:/var/lib/postgresql/data
 
   fileserver:
-    image: hapi-fileserver
+    image: phillezi/tinyhttpfileserver
     restart: always
     ports:
-      - "8000:80"
+      - "8000:8080"
+    volumes:
+      - ./fhir-data:/static
 
 volumes:
   hapi-fhir-postgres:
